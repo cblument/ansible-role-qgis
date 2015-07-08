@@ -1,0 +1,20 @@
+---
+# tasks file for qgis
+
+- name: Add repository key
+  apt_key: id=DD45F6C3
+           keyserver=keyserver.ubuntu.com 
+           state=present
+
+- name: Add repository
+  apt_repository: repo="deb http://qgis.org/debian trusty main"
+                  state=present
+
+- name: Install qgis packages
+  apt: name={{ item }}
+       state=present
+       update_cache=yes
+  with_items:
+    - qgis
+    - python-qgis
+    - qgis-plugin-grass
