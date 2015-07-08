@@ -1,4 +1,4 @@
-Role Name
+qgis
 =========
 
 Installs latest qgis from http://www.qgis.org for Ubuntu trusty
